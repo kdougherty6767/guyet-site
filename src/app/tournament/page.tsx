@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArrowLeftIcon } from "@heroicons/react/24/solid";
 
 export default function TournamentPage() {
   const teams = [
@@ -178,17 +179,19 @@ export default function TournamentPage() {
 
       {/* Content */}
       <div className="relative z-10 p-4 max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-6 text-center">
-          Tournament Teams
+        <h1 className="text-3xl md:text-4xl font-bold mb-6 text-center">
+          The Field
         </h1>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {teams.map((team, index) => (
             <div
               key={index}
-              className="bg-white/10 rounded p-3 backdrop-blur-sm"
+              className={`rounded p-3 backdrop-blur-sm shadow-md ${
+                index % 2 === 0 ? "bg-white/10" : "bg-white/20"
+              }`}
             >
-              <h2 className="font-bold mb-2">{team.hole}</h2>
+              <h2 className="text-lg md:text-xl font-bold mb-2">{team.hole}</h2>
               <ul className="space-y-1 text-sm">
                 {team.players.map((player, idx) => (
                   <li key={idx}>{player}</li>
@@ -200,7 +203,8 @@ export default function TournamentPage() {
 
         <div className="mt-6 text-center">
           <Link href="/">
-            <span className="inline-block bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+            <span className="inline-flex items-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white px-5 py-2.5 rounded-lg shadow-md transition">
+              <ArrowLeftIcon className="w-5 h-5" />
               Back to Home
             </span>
           </Link>

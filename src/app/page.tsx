@@ -1,3 +1,10 @@
+import Link from "next/link";
+import {
+  UsersIcon,
+  CalendarDaysIcon,
+  TrophyIcon,
+} from "@heroicons/react/24/solid";
+
 export default function HomePage() {
   return (
     <main className="relative min-h-screen bg-gray-900 text-white">
@@ -49,13 +56,31 @@ export default function HomePage() {
           *Includes a BBQ Lunch to-go at the clubhouse*
         </p>
 
-        <div className="mt-6">
-          <a
+        <div className="mt-6 flex flex-wrap justify-center items-center gap-4">
+          <Link
             href="/tournament"
-            className="inline-block bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
+            className="inline-flex items-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white px-5 py-2.5 rounded-lg shadow-md transition"
           >
-            View Teams
+            <UsersIcon className="w-5 h-5" />
+            XI Teams
+          </Link>
+          <a
+            href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Guyet+Invitational&dates=20250719T090000/20250719T160000&details=Guyet+Invitational+Golf+Tournament&location=Pine+Valley+Golf+Club%2C+Norfolk%2C+ON+N0E+1W0&ctz=America/Toronto"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-sky-700 hover:bg-sky-800 text-white px-5 py-2.5 rounded-lg shadow-md transition"
+          >
+            <CalendarDaysIcon className="w-5 h-5" />
+            Add to Calendar
           </a>
+
+          <Link
+            href="/results"
+            className="inline-flex items-center gap-2 bg-gray-700 hover:bg-gray-800 text-white px-5 py-2.5 rounded-lg shadow-md transition"
+          >
+            <TrophyIcon className="w-5 h-5" />
+            Results
+          </Link>
         </div>
       </div>
     </main>

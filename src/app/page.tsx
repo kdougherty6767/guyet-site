@@ -56,31 +56,36 @@ export default function HomePage() {
           *Includes a BBQ Lunch to-go at the clubhouse*
         </p>
 
-        <div className="mt-6 flex flex-wrap justify-center items-center gap-4">
-          <Link
-            href="/tournament"
-            className="inline-flex items-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white px-5 py-2.5 rounded-lg shadow-md transition"
-          >
-            <UsersIcon className="w-5 h-5" />
-            XI Teams
-          </Link>
+        <div className="mt-6 w-full max-w-sm mx-auto flex flex-col gap-4">
+          {/* First row: XI Teams + Results side by side */}
+          <div className="flex w-full gap-4">
+            <Link
+              href="/tournament"
+              className="flex-1 inline-flex items-center justify-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white px-5 py-2.5 rounded-lg shadow-md transition"
+            >
+              <UsersIcon className="w-5 h-5" />
+              XI Teams
+            </Link>
+
+            <Link
+              href="/results"
+              className="flex-1 inline-flex items-center justify-center gap-2 bg-gray-700 hover:bg-gray-800 text-white px-5 py-2.5 rounded-lg shadow-md transition"
+            >
+              <TrophyIcon className="w-5 h-5" />
+              Results
+            </Link>
+          </div>
+
+          {/* Second row: Add to Calendar full width */}
           <a
             href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Guyet+Invitational&dates=20250719T090000/20250719T160000&details=Guyet+Invitational+Golf+Tournament&location=Pine+Valley+Golf+Club%2C+Norfolk%2C+ON+N0E+1W0&ctz=America/Toronto"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-sky-700 hover:bg-sky-800 text-white px-5 py-2.5 rounded-lg shadow-md transition"
+            className="w-full inline-flex items-center justify-center gap-2 bg-sky-700 hover:bg-sky-800 text-white px-5 py-2.5 rounded-lg shadow-md transition"
           >
             <CalendarDaysIcon className="w-5 h-5" />
             Add to Calendar
           </a>
-
-          <Link
-            href="/results"
-            className="inline-flex items-center gap-2 bg-gray-700 hover:bg-gray-800 text-white px-5 py-2.5 rounded-lg shadow-md transition"
-          >
-            <TrophyIcon className="w-5 h-5" />
-            Results
-          </Link>
         </div>
       </div>
     </main>
